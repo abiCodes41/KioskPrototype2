@@ -1,0 +1,339 @@
+/* Employee Spotlight Styles */
+.employee-spotlight {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 0;
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  margin: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-y: auto;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+  max-width: calc(100vw - 540px); /* Constrain max width to leave room for sidebar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.main-content::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #ffffff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.employee-card {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.employee-image {
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.employee-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center 20%;
+}
+
+.employee-info {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.employee-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: white;
+}
+
+.employee-title {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.description {
+  margin-bottom: 40px;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 24px;
+}
+
+.action-btn.heart {
+  background: linear-gradient(45deg, #ef4444, #dc2626);
+  color: white;
+}
+
+.action-btn.comment {
+  background: linear-gradient(45deg, #6b7280, #4b5563);
+  color: white;
+}
+
+.action-btn.medal {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: white;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Comments Sidebar */
+.comments-sidebar {
+  width: 500px;
+  height: 100vh;
+  padding: 40px 60px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.comments-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  min-height: 0; /* Allow flex item to shrink below content size */
+}
+
+.comment-list::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+.comment-item {
+  padding: 30px 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.comment-item:hover {
+  transform: translateY(-2px);
+}
+
+.comment-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0;
+}
+
+.comment-gif {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.comment-gif-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.comment-gif-image:hover {
+  transform: scale(1.05);
+}
+
+.comment-mixed {
+  padding: 30px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 280px;
+}
+
+.comment-mixed .comment-text {
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.comment-mixed .comment-gif-image {
+  height: 200px;
+  border-radius: 15px;
+  margin-top: 0;
+}
+
+.comment-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.confetti-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.confetti-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.high-five-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.high-five-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.fire-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.fire-btn:hover {
+  background: rgba(255, 87, 34, 0.2);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px #ff5722);
+}
+
+.comment-images {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.comment-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .employee-spotlight {
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  .main-content {
+    padding: 20px;
+  }
+  
+  .comments-sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .employee-name {
+    font-size: 1.5rem;
+  }
+}
